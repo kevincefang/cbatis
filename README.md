@@ -33,7 +33,9 @@
  
  （3） 执行CQL语句
  
- Map<String,Object> reqMap = new HashMap<>();
+    请求参数放在Map中，key的名称与#{name}相对应.
+
+        Map<String,Object> reqMap = new HashMap<>();
         reqMap.put("id", UUIDs.random());
         reqMap.put("date",new Date());
         reqMap.put("float",12.34f);
