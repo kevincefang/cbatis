@@ -28,9 +28,11 @@
 </sqls>
 
 （2）获取Session
+
  Session session = CassandraClientManager.newInstance().getSession();
  
- (3)执行CQL语句
+ (3) 执行CQL语句
+ 
  Map<String,Object> reqMap = new HashMap<>();
         reqMap.put("id", UUIDs.random());
         reqMap.put("date",new Date());
@@ -66,6 +68,7 @@
         }
         
    （4）关闭session 连接
+   
     if(session != null)
         session.close();
     
