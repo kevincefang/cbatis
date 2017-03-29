@@ -1,37 +1,32 @@
 一款基于NOSQL数据库Cassandra，为实现CQL与代码分离的mini框架.如有问题还请各位大神赐教，O(∩_∩)O
 
-（1）首先定义XML文本内容：
+（1）首先定义test.XML文本内容：
 
-<?xml version="1.0" encoding="gbk"?>
+    <?xml version="1.0" encoding="gbk"?>
 
-<sqls>
+    <sqls>
 
-    <sql id="selectAll">
+        <sql id="selectAll">
 
-        select * from test_keyspace.person
+            select * from test_keyspace.test
 
-    </sql>
+        </sql>
 
-    <sql id="addPerson">
+        <sql id="addTest">
 
-      insert into test_keyspace.person(id,name,age,tags,hobby,sex,numbers,map) values(#{id},#{name},#{age},#{tags},#{hobby},#{sex},#{numbers},#{map})
+          insert into test_keyspace.test (id,date,float,list_int,map_int,name,set_int,timestamp)
+            values (#{id},#{date},#{float},#{list_int},#{map_int},#{name},#{set_int},#{timestamp})
 
-    </sql>
-
-    <sql id="updatePerson">
-        update test_keyspace.person set name= #{name} , age = #{age} , tags = tags + #{tags} , hobby =  hobby + #{hobby} , sex = #{sex},
-        numbers = numbers + #{numbers} , map = map + #{map}
-        where id= #{id}
-    </sql>
+        </sql>
 
 
-</sqls>
+    </sqls>
 
 （2）获取Session
 
- Session session = CassandraClientManager.newInstance().getSession();
+    Session session = CassandraClientManager.newInstance().getSession();
  
- （3） 执行CQL语句
+ （3）执行CQL语句
         请求参数放在Map中，key的名称与#{name}相对应.
 
         Map<String,Object> reqMap = new HashMap<>();
@@ -70,6 +65,6 @@
         
    （4）最后记得关闭session连接(⊙o⊙)哦
  
-    if(session != null)
-        session.close();
-    
+        if(session != null)
+            session.close();
+
