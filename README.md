@@ -31,7 +31,7 @@
 
  Session session = CassandraClientManager.newInstance().getSession();
  
- (3) 执行CQL语句
+ （3） 执行CQL语句
  
  Map<String,Object> reqMap = new HashMap<>();
         reqMap.put("id", UUIDs.random());
