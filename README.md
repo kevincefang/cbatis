@@ -1,4 +1,4 @@
-一款基于NOSQL数据库Cassandra，为实现CQL与代码分离的小框架
+一款基于NOSQL数据库Cassandra，为实现CQL与代码分离的mini框架.如有问题还请各位大神赐教，O(∩_∩)O
 
 （1）首先定义XML文本内容：
 
