@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<sqls>
+
+    <sql id="selectAll">
+
+        select * from test_keyspace.test
+
+    </sql>
+
+    <sql id="addTest">
+
+      insert into test_keyspace.test (id,date,float,list_int,map_int,name,set_int,timestamp)
+        values (#{id},#{date},#{float},#{list_int},#{map_int},#{name},#{set_int},#{timestamp})
+
+    </sql>
+
+
+
+</sqls>

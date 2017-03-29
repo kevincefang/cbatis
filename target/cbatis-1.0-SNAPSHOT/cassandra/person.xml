@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<sqls>
+
+    <sql id="selectAll">
+
+        select * from test_keyspace.person
+
+    </sql>
+
+    <sql id="addPerson">
+
+      insert into test_keyspace.person(id,name,age,tags,hobby,sex,numbers,map) values(#{id},#{name},#{age},#{tags},#{hobby},#{sex},#{numbers},#{map})
+
+    </sql>
+
+    <sql id="updatePerson">
+        update test_keyspace.person set name= #{name} , age = #{age} , tags = tags + #{tags} , hobby =  hobby + #{hobby} , sex = #{sex},
+        numbers = numbers + #{numbers} , map = map + #{map}
+        where id= #{id}
+    </sql>
+
+
+</sqls>

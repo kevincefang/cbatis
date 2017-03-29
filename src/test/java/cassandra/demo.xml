@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<sqls name="demo">
+
+    <sql id="selectUser">
+
+        select * from user where name = #{name};
+
+    </sql>
+
+    <sql id="addUser">
+
+        insert into user(id,name) values(#{id},#{name});
+
+    </sql>
+</sqls>
