@@ -32,8 +32,7 @@
  Session session = CassandraClientManager.newInstance().getSession();
  
  （3） 执行CQL语句
- 
-    请求参数放在Map中，key的名称与#{name}相对应.
+        请求参数放在Map中，key的名称与#{name}相对应.
 
         Map<String,Object> reqMap = new HashMap<>();
         reqMap.put("id", UUIDs.random());
@@ -69,8 +68,8 @@
             e.printStackTrace();
         }
         
-   （4）关闭session 连接
-   
+   （4）最后记得关闭session连接(⊙o⊙)哦
+ 
     if(session != null)
         session.close();
     
