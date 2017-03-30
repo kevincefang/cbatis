@@ -95,7 +95,7 @@ public class CassandraClientManager {
 
     private static Properties props;
 
-    public static String getProperty(String key){
+    private static String getProperty(String key){
         if(null == props) {
             loadProps();
         }
